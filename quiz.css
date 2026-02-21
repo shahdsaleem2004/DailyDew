@@ -1,0 +1,92 @@
+/* Base Page */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Raleway+Dots&display=swap');
+
+body {
+  background: url("https://img.freepik.com/premium-photo/cosmetic-cream-smudge-setting-pink-background-aesthetic-beauty-cosmetic-product_408798-10440.jpg?w=360");
+  font-family: "Merriweather", serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quiz Card */
+.quiz-container {
+  max-width: 900px;
+  width: 90%;
+  background: #fff0f5;
+  padding: 50px 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Title */
+.quiz-container h2 {
+  color: #d63384;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Questions */
+.question p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6c5b7b;
+  margin-bottom: 15px;
+}
+
+/* Options */
+.option {
+  margin: 10px 0;
+  background: #fafafa;
+  padding: 10px 15px;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+.option:hover {
+  background: #ffe0f0;
+}
+
+.form-check-input:checked {
+  background-color: #ff69b4;
+  border-color: #ff69b4;
+}
+
+/* Button */
+.btn-submit {
+  background-color: #ff69b4;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-submit:hover {
+  background-color: #ff1493;
+  transform: translateY(-3px);
+}
+
+/* Small fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 30px 20px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}

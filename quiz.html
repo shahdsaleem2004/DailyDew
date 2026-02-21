@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skincare Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="quiz.css" />
+
+</head>
+<body>
+
+<div class="quiz-container">
+  <h2 class="text-center mb-4" style="color: #d63384;">Find Your Skin Type</h2>
+  <form id="quizForm" action="submitQuiz" method="post">
+
+    <!-- Loop over 10 questions -->
+    <!-- Each question block follows the same structure -->
+
+    <!-- Question 1 -->
+    <div class="question">
+      <p><strong>1. How does your skin feel a few hours after washing it?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q1" value="Dry" required> <label class="form-check-label">A. Tight and dry</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q1" value="Oily"> <label class="form-check-label">B. Shiny, especially in the T-zone</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q1" value="Normal"> <label class="form-check-label">C. Comfortable, not too oily or dry</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q1" value="Sensitive"> <label class="form-check-label">D. Red, itchy, or irritated</label></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <p><strong>2. How often do you experience breakouts?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q2" value="Dry"> <label class="form-check-label">A. Rarely</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q2" value="Oily"> <label class="form-check-label">B. Frequently, especially blackheads and whiteheads</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q2" value="Normal"> <label class="form-check-label">C. Occasionally, but not severe</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q2" value="Sensitive"> <label class="form-check-label">D. Breakouts with redness or irritation</label></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <p><strong>3. How does your skin react to new skincare products?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q3" value="Sensitive"> <label class="form-check-label">A. Often stings or burns</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q3" value="Normal"> <label class="form-check-label">B. No reaction, absorbs well</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q3" value="Oily"> <label class="form-check-label">C. Gets oilier or breaks out</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q3" value="Dry"> <label class="form-check-label">D. Feels tight or flaky afterward</label></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+      <p><strong>4. How does your skin look in the middle of the day?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q4" value="Oily"> <label class="form-check-label">A. Shiny all over</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q4" value="Normal"> <label class="form-check-label">B. Only shiny in the T-zone</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q4" value="Dry"> <label class="form-check-label">C. Flaky or dull</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q4" value="Sensitive"> <label class="form-check-label">D. Red or blotchy</label></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+      <p><strong>5. How does your skin feel after applying moisturizer?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q5" value="Dry"> <label class="form-check-label">A. Still feels dry or tight</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q5" value="Normal"> <label class="form-check-label">B. Feels balanced and hydrated</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q5" value="Oily"> <label class="form-check-label">C. Gets greasy quickly</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q5" value="Sensitive"> <label class="form-check-label">D. Burns or causes redness</label></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+      <p><strong>6. How visible are your pores?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q6" value="Oily"> <label class="form-check-label">A. Large and noticeable</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q6" value="Dry"> <label class="form-check-label">B. Small and barely visible</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q6" value="Normal"> <label class="form-check-label">C. Somewhat visible in the T-zone</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q6" value="Sensitive"> <label class="form-check-label">D. Redness is the concern, not pores</label></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+      <p><strong>7. How does your skin react to sun exposure?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q7" value="Dry"> <label class="form-check-label">A. Burns easily, then peels</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q7" value="Normal"> <label class="form-check-label">B. Tans gradually</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q7" value="Oily"> <label class="form-check-label">C. Gets oily but doesn’t burn easily</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q7" value="Sensitive"> <label class="form-check-label">D. Burns and becomes irritated</label></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+      <p><strong>8. How often do you need to moisturize?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q8" value="Dry"> <label class="form-check-label">A. Multiple times a day</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q8" value="Normal"> <label class="form-check-label">B. Once a day is enough</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q8" value="Oily"> <label class="form-check-label">C. Rarely, or it makes me greasy</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q8" value="Sensitive"> <label class="form-check-label">D. Only with very gentle products</label></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+      <p><strong>9. Does your skin get irritated by fragrances or harsh ingredients?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q9" value="Sensitive"> <label class="form-check-label">A. Yes, often</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q9" value="Dry"> <label class="form-check-label">B. Sometimes, but not severely</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q9" value="Normal"> <label class="form-check-label">C. No, my skin handles most products well</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q9" value="Oily"> <label class="form-check-label">D. Only if the product is too heavy</label></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+      <p><strong>10. How does your skin feel in dry or cold weather?</strong></p>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q10" value="Dry"> <label class="form-check-label">A. Very dry and flaky</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q10" value="Normal"> <label class="form-check-label">B. A little dry, but manageable</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q10" value="Oily"> <label class="form-check-label">C. Stays balanced</label></div>
+      <div class="form-check option"><input class="form-check-input" type="radio" name="q10" value="Sensitive"> <label class="form-check-label">D. Becomes red and irritated</label></div>
+    </div>
+
+    <!-- Submit -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-submit mt-3">Get Results</button>
+    </div>
+  </form>
+</div>
+
+<script src="quiz.js"></script>
+
+</body>
+</html>

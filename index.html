@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dew</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url(skin.jpeg);
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login_register_page {
+            width: 350px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0 0 20px rgba(96, 45, 66, 0.3);
+            box-sizing: border-box;
+        }
+
+        .login_register_page h1 {
+            font-size: 30px;
+            font-style: italic;
+            text-align: center;
+            color: #603d42;
+            margin-bottom: 25px;
+        }
+
+        .form-input {
+            position: relative;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-input i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e68888;
+        }
+
+        .form-input input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 40px;
+            border: 1px solid #d8bf9d;
+            background: rgba(255, 255, 255, 0.7);
+            color: #000;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-input input::placeholder {
+            color: #000;
+            opacity: 0.7;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 60px;
+            border: none;
+            height: 50px;
+            background-color: #c78282;
+            color: white;
+            box-shadow: 0 0 15px rgba(96, 45, 66, 0.5);
+            font-size: 18px;
+            font-style: italic;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #986674;
+            font-size: 19px;
+        }
+
+        .toggle-forms {
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+
+        .toggle-forms a {
+            color: #794949;
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        .toggle-forms a:hover {
+            text-decoration: underline;
+        }
+
+        .guest-option {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .guest-option a {
+            color: #603d42;
+            text-decoration: none;
+        }
+
+        .guest-option a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+        
+        .error-message {
+		    color: #d32f2f;
+		    background-color: #fde0e0;
+		    padding: 12px 16px;
+		    border-radius: 4px;
+		    margin-bottom: 16px; /* Space between error and form */
+		    border-left: 4px solid #d32f2f;
+		    font-size: 14px;
+		    animation: fadeIn 0.3s ease-in-out;
+		    width: 100%;
+		    box-sizing: border-box;
+		}
+
+		/* If your form has padding, you might need this */
+		form {
+		    padding-top: 0; /* Remove top padding if it exists */
+		}
+    </style>
+</head>
+<body>
+    <div class="login_register_page">
+        <!-- Login Form (Visible by Default) -->
+        <div id="loginForm">
+            <h1>Welcome Back</h1>
+            <form action="login" method="post">
+                <div class="form-input">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="form-input">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="toggle-forms">
+                <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+            </div>
+            <div class="guest-option">
+                <a href="quiz.html">Take quiz as guest</a>
+            </div>
+        </div>
+
+        <!-- Register Form (Hidden by Default) -->
+        <div id="registerForm" class="hidden">
+            <h1>Create Account</h1>
+            <form action="register" method="post">
+                <div class="form-input">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="form-input">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <div class="toggle-forms">
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
+    </div>
+    
+    
+<script>
+    
+	document.addEventListener('DOMContentLoaded', function() {
+	    const urlParams = new URLSearchParams(window.location.search);
+	    const errorMsg = urlParams.get('error');
+	    const formType = urlParams.get('form');
+	    
+	    // Show the appropriate form based on URL parameter
+	    if (formType === 'register') {
+	        showRegister();
+	    } else if (formType === 'login') {
+	        showLogin();
+	    }
+	    
+	    if (errorMsg) {
+	        displayError(errorMsg, formType);
+	        // Clean URL without reloading
+	        window.history.replaceState({}, '', window.location.pathname);
+	    }
+	});
+	
+	function displayError(message, formType) {
+	    removeError();
+	    
+	    const errorDiv = document.createElement('div');
+	    errorDiv.className = 'error-message';
+	    errorDiv.textContent = decodeURIComponent(message.replace(/\+/g, ' '));
+	    
+	    // Style the error message
+	    errorDiv.style.cssText = `
+	        background-color: #ffebee;
+	        color: #c62828;
+	        padding: 12px 20px;
+	        border-radius: 8px;
+	        margin-bottom: 20px;
+	        border-left: 4px solid #c62828;
+	        width: 100%;
+	        box-sizing: border-box;
+	    `;
+	    
+	    // Determine which form to show the error on
+	    const targetForm = formType === 'register' 
+	        ? document.getElementById('registerForm')
+	        : document.getElementById('loginForm');
+	    
+	    if (targetForm) {
+	        targetForm.insertBefore(errorDiv, targetForm.firstChild);
+	    }
+	}
+	
+	// Keep your existing removeError, showRegister, showLogin functions
+	function removeError() {
+	    const existingError = document.querySelector('.error-message');
+	    if (existingError) {
+	        existingError.remove();
+	    }
+	}
+	
+	function showRegister() {
+	    document.getElementById("loginForm").classList.add("hidden");
+	    document.getElementById("registerForm").classList.remove("hidden");
+	    removeError();
+	}
+	
+	function showLogin() {
+	    document.getElementById("registerForm").classList.add("hidden");
+	    document.getElementById("loginForm").classList.remove("hidden");
+	    removeError();
+	}
+</script>
+</body>
+</html>

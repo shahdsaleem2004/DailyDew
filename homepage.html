@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skincare Generator</title>
+    <link href="homepage.css" rel = "stylesheet">
+    <link rel="icon" href="logo1.png" type="image/png" sizes="64x64">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" >
+  </head>
+
+<body>
+
+    <button id="myBtn" title="Go to top"></button>
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="homepage.html">
+			<img src="daily_dew_logo.png" id="brand-logo" alt="brand_logo">
+		</a>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse bg-light" id="navbarNav">
+            <ul class="navbar-nav justify-content-center w-100">
+              <!-- Nav Links -->
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="moreproducts.html">Explore Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="moreguides.html">Guides</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+              </li>
+          
+              <!-- Mobile Login/Signup as links -->
+              <li class="nav-item d-lg-none">
+                <a href="index.html" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item d-lg-none">
+                <a href="register.html" class="nav-link">Sign Up</a>
+              </li>
+            </ul>
+          
+            <!-- Desktop Login/Signup Buttons -->
+            <div class="d-none d-lg-flex ms-auto">
+              <a href="index.html" class="btn custom-register me-2">Login</a>
+            </div>
+            
+            
+          </div>
+    </div>
+    </nav>
+
+    <div id="landing">
+    <div class="container">
+        <div class="row align-items-center landing-wrapper">
+          
+          <!-- Left Column -->
+          <div class="col-lg-3 col-md-4 col-12 d-flex flex-column align-items-center gap-3 landing-side mb-4 mb-md-0">
+                <img src="serumgif.gif" alt="Skincare gif" class="img-fluid side-visual">
+                <img src="serumgif2.gif" alt="Glow gif" class="img-fluid side-visual mt-3">
+          </div>
+      
+          <!-- Center Content -->
+          <div class="col-lg-6 col-md-8 col-12 d-flex flex-column align-items-center mb-4 mb-md-0">
+            <div class="landing-content text-center landing-intro">
+              <h1 class="display-4 fw-bold typewriter-heading">
+                <span id="line1-wrapper"><span id="line1"></span></span><br>
+                <span id="line2-wrapper"><span id="line2"></span></span>
+              </h1>
+              <p id="lead">Your go-to place for gentle skincare guidance, product picks, and personalized routines.</p>
+              <a href="quiz.html" class="btn btn-lg custom-cta mt-3 newfont">Take the Skin Type Quiz</a>
+            </div>
+
+            <div class="landing-content text-center mt-4 landing-intro2">
+                <h2 class="fw-bold mb-3">Our Brand &amp; Our Story</h2>
+                <p>
+                  At Daily Dew, we believe that healthy skin begins with understanding your unique needs. 
+                  Born from a passion for gentle, evidence-based skincare, we curate simple routines 
+                  that bring out your natural glow.
+                </p>
+                <p>
+                  From day one, our mission has been to demystify ingredients, debunk myths, and empower 
+                  you to take control of your skin’s health. Welcome to a community that puts clarity, 
+                  kindness, and results first.
+                </p>
+              </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-lg-3 col-md-4 col-12 d-flex flex-column align-items-center gap-3 landing-side mb-4 mb-md-0">
+            <img src="serumgif3.gif" alt="Routine gif" class="img-fluid side-visual">
+            <img src="serumgif4.gif" alt="Serum gif" class="img-fluid side-visual mt-3">
+          </div>
+      
+        </div>
+      </div>
+    </div>  
+      
+ 
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-5 glitter">
+            <div class="container text-center">
+                <h2 class="mb-4" id="testimonials">What our users say</h2>
+
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- Carousel Items -->
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-item active">
+                            <p class="lead">"The skin type quiz was fun, quick, and surprisingly accurate. I followed the suggested routine and saw a difference in just a week!"</p>
+                            <h5 class="text-primary">- Alex Johnson</h5>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item">
+                            <p class="lead">"The routine I built here keeps my skin feeling clean and balanced without drying it out. Highly recommend for anyone getting into skincare!"</p>
+                            <h5 class="text-primary">- Sarah Williams</h5>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <p class="lead">"Finally a place that explains why things like sunscreen matter. I feel like I’m actually learning skincare, not just buying it."</p>
+                            <h5 class="text-primary">- Michael Lee</h5>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore Products Section -->
+    <section id="explore" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Explore Skincare Products</h2>
+
+        <div class="row justify-content-center">
+            <!-- Product 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front Side -->
+                        <div class="flip-card-front">
+                            <img src="https://images.mamaearth.in/catalog/product/g/e/gel-face-moisturizer.jpg?format=auto&height=600&width=600" class="img-fluid" alt="Moisturizer">
+                            <h5 class="text-center mt-2">Hydrating Moisturizer</h5>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="flip-card-back">
+                            <h5>Hydrating Moisturizer</h5>
+                            <p>Infused with hyaluronic acid for deep hydration. Suitable for all skin types.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://hips.hearstapps.com/hmg-prod/images/sunscreen-for-all-skintypes-667422aacffdf.png?crop=0.500xw:1.00xh;0.234xw,0&resize=1200:*" class="img-fluid" alt="Sunscreen">
+                            <h5 class="text-center mt-2">SPF 50 Sunscreen</h5>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>SPF 50 Sunscreen</h5>
+                            <p>Broad-spectrum UV protection with a lightweight, non-greasy formula.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://www.theskincareedit.ae/cdn/shop/files/AH-Vitamin-C-Srm.jpg?v=1741593618&width=1080" class="img-fluid" alt="Vitamin C Serum">
+                            <h5 class="text-center mt-2">Vitamin C Serum</h5>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Vitamin C Serum</h5>
+                            <p>Boosts glow, reduces dark spots, and brightens skin with antioxidants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="moreproducts.html" class="btn custom-register">View More</a>
+        </div>
+    </div>
+    </section>
+
+    <!-- guides section-->
+    <section id="guides" class="py-5 glitter">
+        <div class="container">
+            <h2 class="text-center mb-4">Checkout Some Guides</h2>
+
+            <div class="row justify-content-center">
+                <!-- guide 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="guidepic2.webp" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Ingredient Deep-Dives</h5>
+                          <p class="card-text">Explaining what hyaluronic acid, niacinamide, retinol, etc. do 🤔</p>
+                          <a href="https://www.byrdie.com/skincare-ingredients-glossary-4800556" class="btn btnguide">Read More</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Product 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="guidepic1.jpg" alt="Card image">
+                        <div class="card-body">
+                          <h5 class="card-title">Skincare 101: The Basics</h5>
+                          <p class="card-text">Tips from a licensed aesthetician 💆‍♀️ items to add in and not to</p>
+                          <a href="https://blogs.bcm.edu/2022/02/03/skincare-101-the-basics/" class="btn btnguide">Read More</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Product 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="guidepic3.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Product Layering Guide</h5>
+                          <p class="card-text">What goes first: serum or moisturizer? Rules of thumb for layering 👀</p>
+                          <a href="https://theordinary.com/en-ae/blog/skincare-layering-guide.html" class="btn btnguide">Read More</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="moreguides.html" class="btn custom-register">View More</a>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Section -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+                    <h2 class="mb-3">Subscribe to Our Newsletter</h2>
+                    <p class="text-muted">Stay updated with the latest news, quizzes, and guides.</p>
+                    
+                    <!-- Email Subscription Form -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <form id="newsletter-form" class="d-flex flex-column align-items-center">
+                                <div class="w-100 d-flex">
+                                    <input type="email" id="email" class="form-control me-2" placeholder="Enter your email" required>
+                                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                                </div>
+                                <!-- Warning Message -->
+                                <p id="warning-message" class="mt-2 text-danger d-none">⚠️ Please enter a valid email address.</p>
+                                <!-- Success Message -->
+                                <p id="success-message" class="mt-2 text-success d-none">✅ Subscription successful!</p>
+                            </form>
+                        </div>
+                    </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 faq glitter">
+        <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+            <div class="accordion" id="faqAccordion">
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        What is the best skincare routine for beginners?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A simple skincare routine includes <strong>cleansing</strong> (to remove dirt), <strong>moisturizing</strong> (to hydrate), and <strong>sunscreen</strong> (to protect from UV damage). Start with these and build your routine over time.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        How often should I exfoliate my skin?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        It depends on your skin type! If you have oily skin, exfoliating 2-3 times a week is ideal. If you have sensitive skin, once a week is enough to avoid irritation.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Should I use sunscreen even if I stay indoors?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes! UV rays can penetrate windows and cause skin damage. Using a broad-spectrum SPF 30+ sunscreen indoors helps protect against premature aging and skin issues.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        Can I skip moisturizer if I have oily skin?
+                    </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        No! Even oily skin needs hydration. Use a lightweight, oil-free moisturizer to keep your skin balanced and prevent excess oil production.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                        What ingredients should I look for in a good moisturizer?
+                    </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Look for hyaluronic acid (for hydration), ceramides (to protect the skin barrier), and niacinamide (to reduce redness). If you have dry skin, consider glycerin and shea butter.
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="pt-5 pb-4">
+        <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+      
+            <!-- Brand Info -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold">Skincare Hub</h5>
+              <p>Your go-to place for trusted skincare tips, product guides, and routines tailored to your skin type.</p>
+            </div>
+      
+            <!-- Navigation Links -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold">Explore</h5>
+              <p><a href="#explore" class="text-dark text-decoration-none">Products</a></p>
+              <p><a href="#faq" class="text-dark text-decoration-none">FAQ</a></p>
+              <p><a href="#testimonials" class="text-dark text-decoration-none">Testimonials</a></p>
+            </div>
+      
+            <!-- Contact Info -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+              <p><i class="fas fa-envelope me-2"></i> support@skincarehub.com</p>
+              <p><i class="fas fa-phone me-2"></i> +1 234 567 890</p>
+            </div>
+      
+            <!-- Social Media -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold">Follow Us</h5>
+              <a href="https://facebook.com/" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.pinterest.com/" class="text-dark me-3"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+          </div>
+      
+          <hr class="mb-4">
+      
+          <!-- Copyright -->
+          <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p class="text-center text-md-start">© 2025 Skincare Hub. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+        <script src = "homepage.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skin Type Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Raleway+Dots&display=swap');
+    
+
+body {
+    font-family: "Merriweather", serif;
+    background: url("https://wallpapers.com/images/hd/lavender-pastel-purple-aesthetic-background-d1vv0kd9mvlkcf84.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    color: #5a4a42;
+}
+
+h1, h2, h3, h5 {
+    font-weight: 700;
+    color: #7a6baf; /* Soft muted purple */
+}
+
+.skin-type-card {
+    display: none;
+    background: rgba(245, 240, 255, 0.85); /* Semi-transparent pastel */
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 16px rgba(122, 107, 175, 0.1);
+    backdrop-filter: blur(2px); /* Optional subtle blur effect */
+}
+
+.routine-section {
+    margin-bottom: 40px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 220px;
+    height: 320px;
+    perspective: 1000px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(122, 107, 175, 0.1);
+}
+
+.flip-card-front {
+    background-color: #fff;
+    color: #7a6baf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.5s;
+    border: 1px solid #f0f0f0;
+}
+
+.flip-card-front:hover {
+    background-color: #f9f7ff;
+    transform: translateY(-5px);
+}
+
+.flip-card-back {
+    background-color: #a8d8ea; /* Soft pastel blue */
+    color: #5a4a42;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #d7e3fc; /* Soft blue border */
+}
+
+.error-message {
+    color: #e87a90; /* Soft coral */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.routine-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #b8c5d6; /* Neutral soft blue-gray */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.back-home-btn, .retake-quiz-btn {
+    font-family: "Merriweather", serif;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    margin: 10px 5px;
+    transition: all 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-home-btn {
+    background-color: #7a6baf;
+    color: white;
+    border: none;
+}
+
+.back-home-btn:hover {
+    background-color: #6557a0;
+    box-shadow: 0 4px 12px rgba(122, 107, 175, 0.3);
+}
+
+.retake-quiz-btn {
+    background-color: #d7e3fc;
+    color: #5a4a42;
+    border: none;
+}
+
+.retake-quiz-btn:hover {
+    background-color: #c1d3f7;
+    box-shadow: 0 4px 12px rgba(168, 216, 234, 0.3);
+}
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-5">Your Skin Type Result</h1>
+
+        <!-- Oily Skin -->
+        <div id="oily-card" class="skin-type-card">
+            <h2 class="text-center mb-4">Oily Skin</h2>
+            <p class="text-center mb-4">Your skin tends to produce more oil. Use oil-free products!</p>
+            
+            <div class="routine-section">
+                <h3>Morning Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/516r6ghtxaL.jpg" alt="Cleanser" class="product-img">
+                                <h5>Oil-Free Cleanser</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>CeraVe Foaming Facial Cleanser</i></p>
+                                <p>Gently massage onto damp skin, then rinse with lukewarm water to remove excess oil without stripping moisture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://media.paulaschoice-eu.com/image/upload/f_auto,q_auto,dpr_auto/products/images/1350-lifestyle?_i=AG" alt="Toner" class="product-img">
+                                <h5>Toner</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Paula’s Choice Skin Balancing Pore-Reducing Toner</i></p>
+                                <p>Apply with a cotton pad after cleansing to refine pores and control sebum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://p1-cdn.myaster.com/1aster-prod-media/media/catalog/product/1/0/1060952_6.jpg" alt="Serum" class="product-img">
+                                <h5>Niacinamide Serum</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>The Ordinary Niacinamide 10% + Zinc 1%</i></p>
+                                <p>Dispense a few drops, pat onto skin to reduce shine and breakouts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/619aXJdTryL.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Oil-Free Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Neutrogena Hydro Boost Water Gel</i></p>
+                                <p>Apply a thin layer to hydrate without clogging pores.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/619LhHSBBpL.jpg" alt="Sunscreen" class="product-img">
+                                <h5>Sunscreen</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>La Roche-Posay Anthelios Clear Skin SPF 60</i></p>
+                                <p>Use as the last step to protect against UV rays while mattifying skin.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="routine-section">
+                <h3>Evening Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://wee-prod-public.s3.eu-central-1.amazonaws.com/80aed3c8/6ca72d83/3cbe92fd/2259a8d2/65a02868ca14d7.42014636.medium.jpg" alt="Cleanser" class="product-img">
+                                <h5>Cleanser (Double Cleanse)</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Banila Co Clean It Zero Balm</i></p>
+                                <p>Massage onto dry skin to dissolve makeup/sunscreen, then rinse. Follow with CeraVe Foaming Cleanser.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/51pXKWJ2lNL.jpg" alt="Exfoliant" class="product-img">
+                                <h5>Exfoliant (2-3x/week)</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Paula’s Choice 2% BHA Liquid Exfoliant</i></p>
+                                <p>Swipe over skin to unclog pores and prevent acne.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://static.thcdn.com/images/large/original//productimg/1600/1600/11401174-6414945375361250.jpg" alt="Serum" class="product-img">
+                                <h5>Serum</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>COSRX Advanced Snail 96 Mucin Power Essence</i></p>
+                                <p>Apply to damp skin for hydration and repair.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61f7G1WkWYL.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Gel Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Belif The True Cream Aqua Bomb</i></p>
+                                <p>Apply a thin layer. Lightweight gel-cream locks in moisture..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/51NDNnda3FL._AC_UF1000,1000_QL80_.jpg" alt="Treatment" class="product-img">
+                                <h5>Spot Treatment (if needed)</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Mario Badescu Drying Lotion</i></p>
+                                <p>Dab on blemishes overnight to reduce redness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dry Skin -->
+        <div id="dry-card" class="skin-type-card">
+            <h2 class="text-center mb-4">Dry Skin</h2>
+            <p class="text-center mb-4">Your skin needs extra hydration. Use rich moisturizers!</p>
+            
+            <div class="routine-section">
+                <h3>Morning Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/51CYFJGIx0L._AC_UF1000,1000_QL80_.jpg" alt="Cleanser" class="product-img">
+                                <h5>Cleanser</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>La Roche-Posay Toleriane Hydrating Cleanser</i></p>
+                                <p>Massage in circular motions to cleanse without drying.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/71SDVKnBOfL._AC_UF1000,1000_QL80_.jpg" alt="Toner" class="product-img">
+                                <h5>Toner</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Klairs Supple Preparation Unscented Toner</i></p>
+                                <p>Pat into skin for deep hydration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://beautytribe.com/cdn/shop/files/the-ordinary-hyaluronic-acid-2-b5-2-30ml-105551-832666.jpg?v=1732794224&width=1500" alt="Serum" class="product-img">
+                                <h5>Hyaluronic Acid Serum</h5>
+                            </div>
+                           <div class="flip-card-back">
+                                <p><i>The Ordinary Hyaluronic Acid 2% + B5</i></p>
+                                <p>Apply to damp skin to boost moisture retention.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61VCYVBTRQL.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>First Aid Beauty Ultra Repair Cream</i></p>
+                                <p>Apply one layer. Seal in hydration with a rich, nourishing cream.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61noBnFbBmL.jpg" alt="Sunscreen" class="product-img">
+                                <h5>Hydrating Sunscreen</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Supergoop! PLAY SPF 50</i></p>
+                                <p>Apply length equivalent to two fingers. Protects while preventing moisture loss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Evening Routine for Dry Skin -->
+            <div class="routine-section">
+                <h3>Evening Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                	<!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://static.thcdn.com/productimg/original/12435694-2045217840157098.jpg" alt="Cleanser" class="product-img">
+                                <h5>Cleanser (Oil First)</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>The Inkey List Oat Cleansing Balm</i></p>
+                                <p>Melt away impurities, then follow with La Roche-Posay Hydrating Cleanser.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://static.thcdn.com/productimg/original/14539550-1975194536448911.jpg" alt="Toner" class="product-img">
+                                <h5>Toner</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Laneige Cream Skin Toner & Moisturizer</i></p>
+                                <p>Add one layer for added hydration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/817YEiXqQ5L.jpg" alt="Serum" class="product-img">
+                                <h5>Serum</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Vichy Mineral 89 Hyaluronic Acid Booster</i></p>
+                                <p>Strengthen the skin barrier with a hydrating serum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://img-product.sephora.me/dw/image/v2/BKWK_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwf560205d/images/hi-res/SKU/SKU_4758/650193_swatch.jpg?sw=585&sh=585&sm=fit" alt="Moisturizer" class="product-img">
+                                <h5>Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Dr. Jart+ Ceramidin Cream</i></p>
+                                <p>Rich ceramides repair dry patches overnight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/71nPVEghgDL.jpg" alt="Oil" class="product-img">
+                                <h5>Face Oil</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Biossance Squalane + Vitamin C Rose Oil</i></p>
+                                <p>Press 2-3 drops onto skin for extra nourishment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+         <!-- Normal Skin -->
+        <div id="normal-card" class="skin-type-card">
+            <h2 class="text-center mb-4">Normal Skin</h2>
+            <p class="text-center mb-4">Your skin is well-balanced. Maintain it with gentle care!</p>
+            
+            <div class="routine-section">
+                <h3>Morning Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/611CqqmWe8L.jpg" alt="Cleanser" class="product-img">
+                                <h5>Cleanser</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Fresh Soy Face Cleanser</i></p>
+                                <p>Gentle formula maintains skin’s balance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61wkQbHSoHL.jpg" alt="Toner" class="product-img">
+                                <h5>Toner</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Thayers Witch Hazel Toner (Alcohol-Free)</i></p>
+                                <p>Pat into skin. Freshens and lightly hydrates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://glossier-prod.imgix.net/products/glossier-super-glow-carousel-03.png?auto=compress,format&cs=srgb&w=916" alt="Serum" class="product-img">
+                                <h5>Serum</h5>
+                            </div>
+                           <div class="flip-card-back">
+                                <p><i>Glossier Super Glow (Vitamin C + Niacinamide) </i></p>
+                                <p>Apply to skin. Brightens and evens tone.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/51BCmVm76XL._AC_UF1000,1000_QL80_.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Tatcha The Water Cream</i></p>
+                                <p>Apply one layer. Lightweight hydration with a satin finish.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61pg7GRP3GL.jpg" alt="Sunscreen" class="product-img">
+                                <h5>Sunscreen</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>EltaMD UV Clear SPF 46</i></p>
+                                <p>Apply length equivalent to two fingers. Protects without heaviness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Evening Routine for Normal Skin -->
+            <div class="routine-section">
+                <h3>Evening Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                	<!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://cdn.mafrservices.com/pim-content/UAE/media/product/850036559047/1729582231/850036559047_main.jpeg" alt="Cleanser" class="product-img">
+                                <h5>Cleanser</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Krave Beauty Matcha Hemp Hydrating Cleanser </i></p>
+                                <p>Apply to skin. Soothes while cleansing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/51VWr9jfaeL.jpg" alt="Exfoliant" class="product-img">
+                                <h5>Exfoliant (1-2x/week)</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Drunk Elephant T.L.C. Framboos Glycolic Serum</i></p>
+                                <p>Swipe over skin to unclog pores. Smooths texture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://static.thcdn.com/images/large/original//productimg/1600/1600/12663747-9304918742037918.jpg" alt="Serum" class="product-img">
+                                <h5>Serum</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Estée Lauder Advanced Night Repair</i></p>
+                                <p>Strengthen the skin barrier with a serum. Repairs overnight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://www.kiehls.ae/dw/image/v2/BGSJ_PRD/on/demandware.static/-/Sites-kiehls-master-catalog/default/dw30e3fc8f/nextgen/skin-care/face-moisturizers/ultra-facial/ultra-facial-cream/kiehls-face-cream-ultra-facial-cream-125ml-000-3605975028799-whip.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Kiehl’s Ultra Facial Cream</i></p>
+                                <p>Apply one layer to skin. Locks in moisture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/71DMbiEXcPL.jpg" alt="Cream" class="product-img">
+                                <h5>Eye Cream</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>CeraVe Eye Repair Cream</i></p>
+                                <p>Pat around eyes to hydrate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- 	Sensitive Skin -->
+        <div id="sensitive-card" class="skin-type-card">
+            <h2 class="text-center mb-4">Sensitive Skin</h2>
+            <p class="text-center mb-4">Your skin is easily irritated. Use fragrance-free, gentle products!</p>
+            
+            <div class="routine-section">
+                <h3>Morning Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/vnc/vnc32208/l/12.jpg" alt="Cleanser" class="product-img">
+                                <h5>Cleanser</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Vanicream Gentle Facial Cleanser</i></p>
+                                <p>Massage in circular motions to cleanse. Fragrance-free and non-irritating.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61OVqzlRCFL.jpg" alt="Toner" class="product-img">
+                                <h5>Toner</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Avene Thermal Spring Water</i></p>
+                                <p>Pat into skin. Soothes redness with a light mist.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://www.laroche-posay.sg/-/media/project/loreal/brand-sites/lrp/apac/sg/products/toleriane/dermallergo-01-neurosensine-serum/larocheposay-product-allergic-toleriane-ultradermallergo-20ml-3337875693820-openss-1.jpg" alt="Serum" class="product-img">
+                                <h5>Serum</h5>
+                            </div>
+                           <div class="flip-card-back">
+                                <p><i> La Roche-Posay Toleriane Ultra Dermallergo Serum</i></p>
+                                <p>Apply to skin. Calms reactive skin.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61VCYVBTRQL.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>First Aid Beauty Ultra Repair Cream</i></p>
+                                <p>Apply one layer. Reduces irritation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/611F20kdrxL.jpg" alt="Sunscreen" class="product-img">
+                                <h5>Sunscreen</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Cotz Sensitive SPF 40</i></p>
+                                <p>Apply length equivalent to two fingers. Mineral-based, no white cast.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Evening Routine for Sensitive Skin -->
+            <div class="routine-section">
+                <h3>Evening Routine</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                	<!-- Product 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://www.bioderma.ae/sites/ae/files/styles/fancybox_2000_2000/public/products/%7B157387%7D_%7B%7D_%7B28703X%7D.jpg?itok=ZksLdNWn" alt="Cleanser" class="product-img">
+                                <h5>Cleanser</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Bioderma Sensibio H2O Micellar Water</i></p>
+                                <p>Removes makeup gently.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/71SDVKnBOfL._AC_UF1000,1000_QL80_.jpg" alt="Toner" class="product-img">
+                                <h5>Toner</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Klairs Supple Preparation Unscented Toner</i></p>
+                                <p>Apply to skin. Hydrates without sting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/51Fv+t+f7rL.jpg" alt="Serum" class="product-img">
+                                <h5>Serum</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>The Ordinary Buffet + Copper Peptides</i></p>
+                                <p>Strengthen the skin barrier with a serum. Repairs sensitized skin.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://m.media-amazon.com/images/I/61D9hqXAwQL.jpg" alt="Moisturizer" class="product-img">
+                                <h5>Moisturizer</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Avene Cicalfate+ Restorative Cream</i></p>
+                                <p>Apply to skin. Strengthens the barrier.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://us.laneige.com/cdn/shop/files/LANEIGE-Cica-Sleeping-Mask-10ml_PDP-1000x1000-v2_1_grande.jpg?v=1695839141" alt="Oil" class="product-img">
+                                <h5>Sleeping Mask (1-2x/week)</h5>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><i>Laneige Cica Sleeping Mask</i></p>
+                                <p>Soothes overnight.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-message" style="display: none;">
+            Oops! No skin type result available. Please retake the quiz.
+        </div>
+    </div>
+    
+    <div class="text-center mt-5">
+	  <a href="homepage.html" class="btn back-home-btn me-3">Back to Home</a>
+	  <a href="quiz.html" class="btn retake-quiz-btn">Retake Quiz</a>
+	</div>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skinType = new URLSearchParams(window.location.search).get('skinType');
+            
+            if (skinType) {
+                document.querySelectorAll('.skin-type-card').forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                const selectedCard = document.getElementById(skinType.toLowerCase() + '-card');
+                if (selectedCard) {
+                    selectedCard.style.display = 'block';
+                } else {
+                    document.getElementById('error-message').style.display = 'block';
+                }
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

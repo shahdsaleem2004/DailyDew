@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Dashboard - Skincare Hub</title>
+    <link href="dashboard.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage.html">Skincare Hub 💆‍♀</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center"> <li class="nav-item">
+                        <a class="nav-link" href="homepage.html#explore">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-danger ms-2" href="#">Log Out</a>
+                    </li>
+                    <li class="nav-item ms-3"> <a class="btn btn-outline-primary" href="index.html">Log In</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-success" href="index.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow p-4">
+                    <h2 class="text-center mb-4">User Dashboard</h2>
+
+                    <div class="mb-3">
+                        <h4>Welcome, <span id="username">User123</span>!</h4>
+                        <p class="text-muted">Manage your account and skincare preferences here.</p>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#changeUsernameModal">
+                            <i class="fas fa-user-edit me-2"></i> Change Username
+                        </button>
+                        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                            <i class="fas fa-key me-2"></i> Change Password
+                        </button>
+                        <button class="btn btn-outline-success">
+                            <i class="fas fa-file-alt me-2"></i> Show Skincare Report
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="window.location.href='index.html';">
+                            <i class="fas fa-sign-in-alt me-2"></i> Log In / Sign Up
+                        </button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                            <i class="fas fa-trash-alt me-2"></i> Delete Account
+                        </button>
+                        <a class="btn btn-warning" href="homepage.html">
+                            <i class="fas fa-sign-out-alt me-2"></i> Log Out
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changeUsernameModal" tabindex="-1" aria-labelledby="changeUsernameModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changeUsernameModalLabel">Change Username</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="changeUsernameForm">
+                        <div class="mb-3">
+                            <label for="newUsername" class="form-label">New Username:</label>
+                            <input type="text" class="form-control" id="newUsername" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Username</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="changePasswordForm">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password:</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password:</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmNewPassword" class="form-label">Confirm New Password:</label>
+                            <input type="password" class="form-control" id="confirmNewPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAccountModalLabel">Delete Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                    <form id="deleteAccountForm">
+                        <div class="mb-3">
+                            <label for="confirmPasswordDelete" class="form-label">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmPasswordDelete" required>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Delete My Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // In a real application, you would fetch the username dynamically
+        // from local storage, a cookie, or server-side data.
+        document.addEventListener('DOMContentLoaded', function() {
+            const storedUsername = localStorage.getItem('skincareHubUsername'); // Example
+            if (storedUsername) {
+                document.getElementById('username').textContent = storedUsername;
+            }
+        });
+
+        // You would also implement the logic for handling form submissions
+        // (e.g., sending data to a server) using JavaScript.
+        document.getElementById('changeUsernameForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newUsername = document.getElementById('newUsername').value;
+            // In a real application, send this to the server to update.
+            console.log('New username submitted:', newUsername);
+            document.getElementById('username').textContent = newUsername;
+            localStorage.setItem('skincareHubUsername', newUsername); // Example
+            const changeUsernameModal = bootstrap.Modal.getInstance(document.getElementById('changeUsernameModal'));
+            changeUsernameModal.hide();
+        });
+
+        document.getElementById('changePasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+            // In a real application, send these to the server for password update.
+            console.log('Password change requested:', { currentPassword, newPassword, confirmNewPassword });
+            const changePasswordModal = bootstrap.Modal.getInstance(document.getElementById('changePasswordModal'));
+            changePasswordModal.hide();
+            // Optionally, provide feedback to the user.
+        });
+
+        document.getElementById('deleteAccountForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const confirmPasswordDelete = document.getElementById('confirmPasswordDelete').value;
+            // In a real application, send this to the server for account deletion.
+            console.log('Account deletion requested with password:', confirmPasswordDelete);
+            const deleteAccountModal = bootstrap.Modal.getInstance(document.getElementById('deleteAccountModal'));
+            deleteAccountModal.hide();
+            // Optionally, redirect the user to a goodbye page or the homepage.
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
